@@ -1,3 +1,6 @@
+## (Sidenote) Link to Figma with design website is supposed to have in the future:
+ [figma/sorting-algorithms-project-react](https://www.figma.com/file/zYMyfdaV0nViJkQYSGDcc4/Sorting-algorithms-react-app?node-id=0%3A1)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
