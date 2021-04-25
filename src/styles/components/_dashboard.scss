@@ -1,0 +1,15 @@
+.Dashboard {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	margin-left: 100px;
+	background-color: #f8f8fb;
+}
+
+.Dashboard .overview,
+.Dashboard .charts,
+.Dashboard .small-cards {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
