@@ -30,13 +30,7 @@ export default function ChartBar(props) {
 		};
 	});
 	return (
-		<div
-			style={{
-				width: `${props.width}px`,
-				height: `${props.height}px`
-			}}
-			className="card-chart"
-		>
+		<div className="card-chart card-chart--big">
 			<BarChart width={props.width} height={props.height} data={chartData}>
 				<CartesianGrid strokeDasharray="3 3" />
 				<XAxis dataKey="name" />

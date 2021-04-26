@@ -14,16 +14,10 @@ export default function CardChart(props) {
 	const algorithms = useSelector((state) => selectMethodsOfSorting(state));
 
 	return (
-		<div
-			style={{
-				width: `${props.width}px`,
-				height: `${props.height}px`
-			}}
-			className="card-chart"
-		>
+		<div className="card-chart card-chart-small">
 			<p> Algorithms by method of sorting</p>
 			<hr />
-			<PieChart width={props.width - 20} height={props.height - 20}>
+			<PieChart width={props.width} height={props.height}>
 				<Pie
 					data={algorithms}
 					dataKey="value"
@@ -38,7 +32,12 @@ export default function CardChart(props) {
 					))}
 					<LabelList dataKey="method" position="insideEnd" />
 				</Pie>
-				<Legend layout="vertical" align="left" iconType="plainline" iconSize={60} />
+				<Legend
+					layout="horizontal"
+					align="center"
+					iconType="plainline"
+					iconSize={60}
+				/>
 				<Tooltip
 					formatter={(value, name) => (
 						<p>

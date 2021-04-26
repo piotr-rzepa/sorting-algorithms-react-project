@@ -22,7 +22,7 @@ export default function CardChart(props) {
 				width: `${props.width}px`,
 				height: `${props.height}px`
 			}}
-			className="card-chart"
+			className="card-chart card-chart--big"
 		>
 			<LineChart
 				width={props.width}
