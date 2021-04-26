@@ -1,0 +1,31 @@
+.data-options-button {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 6px;
+	border: none;
+	font-weight: bold;
+	padding: $padding;
+	border-radius: 6px;
+	text-align: center;
+	background-color: #f8f8fb;
+	border: 1px solid lightgray;
+	color: $purple;
+}
+
+.button-group {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.data-options-button--modal {
+	border: none;
+	font-weight: bold;
+	padding: $padding;
+	border-radius: 6px;
+	text-align: center;
+	background-color: #f8f8fb;
+	border: 1px solid lightgray;
+	color: $purple;
+}

@@ -1,0 +1,25 @@
+.algorithm-list {
+	background-color: $white;
+	padding: $padding;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	border-radius: 12px;
+	box-shadow: 2px 2px 2px lightgray;
+	width: 23%;
+}
+
+.algorithm-list-title {
+	margin: $padding 0;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.algorithm-list ul {
+	padding: $padding;
+}
+
+.algorithm-list ul li {
+	margin: $padding 0;
+	text-decoration: none;
+}

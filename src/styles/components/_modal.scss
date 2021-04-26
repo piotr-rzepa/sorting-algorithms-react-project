@@ -1,0 +1,58 @@
+.ReactModalPortal .ReactModal__Overlay {
+	transition: opacity 200ms ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 65%;
+	height: 65%;
+	margin: auto;
+	border: 1px solid gray;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+	opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+	opacity: 0;
+}
+
+.modal {
+	max-width: 100%;
+	outline: none;
+	text-align: center;
+	font-size: larger;
+}
+
+.modal__body {
+	word-break: break-all;
+	font-size: 2rem;
+	font-weight: 300;
+}
+
+.numeric-settings {
+	display: grid;
+	grid-template-columns: auto auto;
+	margin: 0 24px;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.settings-title,
+.settings-input {
+	display: flex;
+	flex-direction: column;
+}
+
+.select-settings {
+	display: flex;
+	flex-direction: column;
+	margin: 48px 0;
+}
+
+.numeric-settings input[type='number'] {
+	text-align: center;
+	font-size: large;
+	border: none;
+	border-bottom: 2px solid gray;
+}

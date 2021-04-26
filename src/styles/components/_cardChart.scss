@@ -1,4 +1,17 @@
 .card-chart {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	background-color: $white;
-	border: 1px solid $black;
+	box-shadow: 2px 2px 2px lightgray;
+	border-radius: 12px;
+}
+
+.card-chart--big {
+	width: 49%;
+}
+
+.card-chart-small {
+	width: 23%;
 }

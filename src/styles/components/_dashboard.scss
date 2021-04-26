@@ -4,12 +4,25 @@
 	height: 100%;
 	margin-left: 100px;
 	background-color: #f8f8fb;
+	padding: $padding 6rem;
 }
 
 .Dashboard .overview,
-.Dashboard .charts,
 .Dashboard .small-cards {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+}
+
+.small-cards {
+	padding: 2rem 0;
+}
+
+.charts {
+	display: flex;
+	justify-content: space-between;
+}
+
+.overview-title p {
+	color: gray;
 }
