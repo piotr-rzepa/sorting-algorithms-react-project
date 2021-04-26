@@ -5,10 +5,15 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-export default function CardBig({ desc }) {
+export default function CardBig({ desc, icon, background }) {
 	return (
 		<div className="Card Card--big">
-			<h4>{desc}</h4>
+			<div className="svg-image-background" style={background}>
+				<img src={icon} width={38} height={38} alt="Icon" />
+			</div>
+			<div className="Card-description">
+				<h4>{desc}</h4>
+			</div>
 		</div>
 	);
 }
