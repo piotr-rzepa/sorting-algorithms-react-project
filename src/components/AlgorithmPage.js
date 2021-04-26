@@ -13,7 +13,13 @@ import ChartVisualize from './ChartVisualize';
 import SettingsModal from './SettingsModal';
 import { ReactComponent as PlusSVG } from '../images/plus.svg';
 import { ReactComponent as EditSVG } from '../images/edit.svg';
-import sortManager, { evaluateResults } from '../sortingImpl/sortManager';
+import InfoSVG from '../images/info.svg';
+import PercentSVG from '../images/percent.svg';
+import RefreshSVG from '../images/refresh.svg';
+import ClockSVG from '../images/clock.svg';
+import TrophySVG from '../images/trophy.svg';
+import IncreaseSVG from '../images/increase.svg';
+import { evaluateResults } from '../sortingImpl/sortManager';
 import { useDispatch } from 'react-redux';
 import { setSortingTime } from '../actions/sorting';
 import numeral from 'numeral';
@@ -32,7 +38,7 @@ export default function AlgorithmPage({ match }) {
 
 	//* Tworzenie losowych danych do wizualizacji
 	const test = Array.from(
-		{ length: 100 },
+		{ length: 150 },
 		() => Math.floor(Math.random() * (100 - 0)) + 0
 	);
 
@@ -80,7 +86,7 @@ export default function AlgorithmPage({ match }) {
 					sortingPercent: (i + 1) / arr.length,
 					data: ele.map((value) => ({ pv: value }))
 				});
-			}, 500 * i);
+			}, 300 * i);
 		});
 	};
 
@@ -119,41 +125,89 @@ export default function AlgorithmPage({ match }) {
 				contentLabel="Example Modal"
 			/>
 			<div className="overview">
-				<h1>{match.params.id}</h1>
-				<p>Overview of sorting algorithms</p>
-
-				<button type="button" onClick={() => setIsOpen(() => true)}>
-					<EditSVG width="24px" height="24px" />
-					Manage data options
-				</button>
-				<button type="button" onClick={() => runTestRoutine()}>
-					<PlusSVG width="24px" height="24px" />
-					Run tests
-				</button>
-				<button type="button" onClick={() => visualizationStep()}>
-					<PlusSVG width="24px" height="24px" />
-					Show example visualization
-				</button>
+				<div className="overview-title">
+					<h1>{match.params.id}</h1>
+					<p>Overview of sorting algorithm</p>
+				</div>
+				<div className="button-group">
+					<button
+						type="button"
+						className="data-options-button"
+						onClick={() => setIsOpen(() => true)}
+					>
+						<EditSVG width="24px" height="24px" />
+						Manage data options
+					</button>
+					<button
+						className="data-options-button"
+						type="button"
+						onClick={() => runTestRoutine()}
+					>
+						<PlusSVG width="24px" height="24px" />
+						Run tests
+					</button>
+					<button
+						className="data-options-button"
+						type="button"
+						onClick={() => visualizationStep()}
+					>
+						<PlusSVG width="24px" height="24px" />
+						Show example visualization
+					</button>
+				</div>
 			</div>
 			<div className="small-cards">
-				<Card title={'#1'} subtitle={'Position in ranking'} />
-				<Card title={`${sortT}ms`} subtitle={'Average sorting time'} />
-				<CardBig desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
+				<Card
+					title={'#1'}
+					subtitle={'Position in ranking'}
+					icon={TrophySVG}
+					background={{ backgroundColor: 'rgba(255,184,0,0.07)' }}
+				/>
+				<Card
+					title={`${sortT}ms`}
+					subtitle={'Average sorting time'}
+					icon={ClockSVG}
+					background={{ backgroundColor: 'rgba(76,184,255,0.07)' }}
+				/>
+				<CardBig
+					desc={sortObj.description}
+					icon={InfoSVG}
+					background={{ backgroundColor: 'white' }}
+				/>
 			</div>
 			<div className="charts">
-				<ChartLine width={830} height={378} data={lineChartData} />
-				<ChartVisualize width={830} height={378} data={data.data} />
+				<ChartLine width={970} height={380} data={lineChartData} />
+				<ChartVisualize width={890} height={400} data={data.data} />
 			</div>
 			<div className="small-cards">
-				<Card title={sortingInfo.passed} subtitle={'Sortings passed'} />
-				<Card title={sortingInfo.time} subtitle={'Sorting time'} />
-				<Card title={data.sortingStep} subtitle={'Sorting step'} />
+				<Card
+					title={sortingInfo.passed}
+					subtitle={'Sortings passed'}
+					icon={RefreshSVG}
+					background={{ backgroundColor: 'rgba(255,184,0,0.07)' }}
+				/>
+				<Card
+					title={sortingInfo.time}
+					subtitle={'Sorting time'}
+					icon={ClockSVG}
+					background={{ backgroundColor: 'rgba(76,184,255,0.07)' }}
+				/>
+				<Card
+					title={data.sortingStep}
+					subtitle={'Sorting step'}
+					icon={IncreaseSVG}
+					background={{ backgroundColor: 'rgba(76,184,255,0.07)' }}
+				/>
 				<Card
 					title={numeral(data.sortingPercent).format('0.00%')}
 					subtitle={'Sorting completion'}
+					icon={PercentSVG}
+					background={{ backgroundColor: 'rgba(76,184,255,0.07)' }}
 				/>
 			</div>
-			<p>Made by Chili Labs & Piotr</p>
+			<p style={{ textAlign: 'right', padding: '2px 0' }}>
+				Made by Chili Labs & Piotr
+			</p>
 		</div>
 	);
 }
