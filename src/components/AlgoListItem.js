@@ -10,7 +10,7 @@ export default function AlgoListItem(props) {
 	return (
 		<React.Fragment key={props.id}>
 			<li>
-				<Link to={`/algorithm/${props.name}`}>{props.name}</Link>:{' '}
+				<Link to={`/algorithm/${props.name}`}>{props.name}</Link>:
 				{props.sortingTime.average}{' '}
 			</li>
 		</React.Fragment>

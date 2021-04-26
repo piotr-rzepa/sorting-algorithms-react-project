@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import selectSortedAlgorithms from '../selectors/sortingSelector';
 import { setSortingAsc, setSortingDesc } from '../actions/filters';
 
-export default function AlgoList(props) {
+export default function AlgoList() {
 	const algorithms = useSelector((state) => selectSortedAlgorithms(state));
 	const dispatch = useDispatch();
 
@@ -21,18 +21,15 @@ export default function AlgoList(props) {
 	};
 
 	return (
-		<div
-			style={{
-				width: `${props.width}px`,
-				height: `${props.height}px`,
-				border: '1px solid black'
-			}}
-		>
-			<p>Algorithms by sorting time</p>
-			<select name="sorting" onChange={(e) => onSortChange(e.target.value)}>
-				<option>Descending</option>
-				<option>Ascending</option>
-			</select>
+		<div className="algorithm-list">
+			<div className="algorithm-list-title">
+				<p>Algorithms by sorting time</p>
+				<select name="sorting" onChange={(e) => onSortChange(e.target.value)}>
+					<option>Descending</option>
+					<option>Ascending</option>
+				</select>
+			</div>
+			<hr />
 			<ul>
 				{algorithms.map((algorithm) => (
 					<AlgoListItem

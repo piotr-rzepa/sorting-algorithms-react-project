@@ -8,8 +8,11 @@ import ChartBar from './ChartBar';
 import ChartPie from './ChartPie';
 import AlgoList from './AlgoList';
 import SettingsModal from './SettingsModal';
-import { ReactComponent as PlusSVG } from '../images/plus.svg';
 import { ReactComponent as EditSVG } from '../images/edit.svg';
+import GroupSVG from '../images/group.svg';
+import ClockSVG from '../images/clock.svg';
+import DecreasingSVG from '../images/decreasing.svg';
+import TrophySVG from '../images/trophy.svg';
 import { useSelector } from 'react-redux';
 import selectFastestSlowestAlgo from '../selectors/fastslowestSelector';
 import numeral from 'numeral';
@@ -29,33 +32,53 @@ export default function Dashboard() {
 				contentLabel="Example Modal"
 			/>
 			<div className="overview">
-				<h1>Dashboard</h1>
-				<p>Overview of sorting algorithms</p>
-
-				<button type="button" onClick={() => setIsOpen(() => true)}>
+				<div className="overview-title">
+					<h1>Dashboard</h1>
+					<p>Overview of sorting algorithms</p>
+				</div>
+				<button
+					className="data-options-button"
+					type="button"
+					onClick={() => setIsOpen(() => true)}
+				>
 					<EditSVG width="24px" height="24px" />
 					Manage data options
 				</button>
-				<button type="button">
-					<PlusSVG width="24px" height="24px" />
-					Populate algorithms with data
-				</button>
 			</div>
 			<div className="small-cards">
-				<Card title={numberOfAlgorithms} subtitle={'Algorithms'} />
+				<Card
+					title={numberOfAlgorithms}
+					subtitle={'Algorithms'}
+					icon={GroupSVG}
+					background={{ backgroundColor: 'rgba(113,59,219,0.05)' }}
+				/>
 				<Card
 					title={`${numeral(average * 100).format('00:00:00')}ms`}
 					subtitle={'Overall average sorting time'}
+					icon={ClockSVG}
+					background={{ backgroundColor: 'rgba(76,184,255,0.07)' }}
 				/>
-				<Card title={slowest} subtitle={'Worst average sorting time'} />
-				<Card title={fastest} subtitle={'Best average sorting time'} />
+				<Card
+					title={slowest}
+					subtitle={'Worst average sorting time'}
+					icon={DecreasingSVG}
+					background={{ backgroundColor: 'rgba(255,76,97,0.05)' }}
+				/>
+				<Card
+					title={fastest}
+					subtitle={'Best average sorting time'}
+					icon={TrophySVG}
+					background={{ backgroundColor: 'rgba(255,184,0,0.07)' }}
+				/>
 			</div>
 			<div className="charts">
-				<ChartBar width={830} height={569} />
-				<AlgoList width={395} height={572} />
-				<ChartPie width={395} height={572} />
+				<ChartBar width={820} height={520} />
+				<AlgoList />
+				<ChartPie width={387} height={550} />
 			</div>
-			<p>Made by Chili Labs & Piotr</p>
+			<p style={{ textAlign: 'right', padding: '2px 0' }}>
+				Made by Chili Labs & Piotr
+			</p>
 		</div>
 	);
 }
