@@ -24,6 +24,7 @@ import { useDispatch } from 'react-redux';
 import { setSortingTime } from '../actions/sorting';
 import numeral from 'numeral';
 import worker from 'workerize-loader?inline!../workers/worker';
+import { selectSortedPositions } from '../selectors/sortingSelector';
 
 //* Obiekt match zawiera informację o ścieżce, parametrach, (w tym nazwę algorytmu który chcemy wyświetlić)
 export default function AlgorithmPage({ match }) {
@@ -37,15 +38,17 @@ export default function AlgorithmPage({ match }) {
 	}, []);
 
 	//* Tworzenie losowych danych do wizualizacji
-	const test = Array.from(
-		{ length: 150 },
-		() => Math.floor(Math.random() * (100 - 0)) + 0
+	const test = Array.from({ length: 150 }, () =>
+		Math.floor(Math.random() * 100)
 	);
 
 	//* Obiekt algorytmu, na którego stronie jesteśmy
 	const sortObj = useSelector((state) => state.algorithms).filter(
 		(sort) => sort.name === match.params.id
 	)[0];
+	const place = useSelector((state) => selectSortedPositions(state)).indexOf(
+		sortObj
+	);
 
 	const dispatch = useDispatch();
 
@@ -158,7 +161,7 @@ export default function AlgorithmPage({ match }) {
 			</div>
 			<div className="small-cards">
 				<Card
-					title={'#1'}
+					title={`#${place + 1}`}
 					subtitle={'Position in ranking'}
 					icon={TrophySVG}
 					background={{ backgroundColor: 'rgba(255,184,0,0.07)' }}
