@@ -23,4 +23,12 @@ const selectSortedAlgorithms = createSelector(
 	}
 );
 
+//* Selektor do zwracania pozycji danego algorytmu sortowania w zalezności od jego czasu
+const selectSortedPositions = createSelector([getAlgorithms], (algorithms) => {
+	return [...algorithms].sort((a, b) =>
+		a.sortingTime.average < b.sortingTime.average ? -1 : 1
+	);
+});
+
 export default selectSortedAlgorithms;
+export { selectSortedPositions };
