@@ -1,7 +1,7 @@
 const shellSortAsc = (originalArray) => {
 	// Prevent original array from mutations.
 	const array = [...originalArray];
-	// Define a gap distance.
+	// Define a gap distance (sortowanie elementów o ustaloną ilość miejść -> gap)
 	let gap = Math.floor(array.length / 2);
 
 	// Until gap is bigger then zero do elements comparisons and swaps.
@@ -23,10 +23,10 @@ const shellSortAsc = (originalArray) => {
 				currentIndex -= gap;
 			}
 		}
-		// Shrink the gap.
+		// Gap staje się coraz mniejszy, przez co fragmenty są większe, ale coraz bardziej posortowane
 		gap = Math.floor(gap / 2);
 	}
-	// Return sorted copy of an original array.
+
 	return array;
 };
 const shellSortDesc = (originalArray) => {

@@ -4,10 +4,15 @@ const quickSortAsc = (originalArr) => {
 	if (arr.length <= 1) {
 		return arr;
 	}
+	//Tablica wartości < pivot
 	const leftPart = [];
+	//Tablica wartości > pivot
 	const rightPart = [];
+	//Element rozdzielający -> Wybieramy pierwszy i usuwamy go z listy
+	//Tworzymy z pivota osobną 1-elementową tablicę
 	const pivot = arr.shift();
 	const center = [pivot];
+	//Dodajemy wartości do odpowiednich tablic
 	while (arr.length) {
 		const currElement = arr.shift();
 		if (currElement === pivot) {
@@ -17,6 +22,7 @@ const quickSortAsc = (originalArr) => {
 		} else rightPart.push(currElement);
 	}
 
+	//Rekursywnie przeprowadzamy sortowanie podtablic
 	const leftArraySorted = quickSortAsc(leftPart);
 	const rightArraySorted = quickSortAsc(rightPart);
 	return [...leftArraySorted, ...center, ...rightArraySorted];

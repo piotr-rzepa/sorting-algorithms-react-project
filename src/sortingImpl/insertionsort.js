@@ -1,23 +1,29 @@
 const insertionSortAsc = (originalArray) => {
 	const array = [...originalArray];
 	const n = array.length;
-	// Go through all array elements...
+
+	/**
+	 * 4 2 3 5
+	 * 2 4 3 5
+	 * 2 3 4 5
+	 *
+	 */
 	for (let i = 1; i < n; i += 1) {
+		//Wybieramy element ze zbioru
 		let currentIndex = i;
 
-		// Check if previous element is greater than current element.
-		// If so, swap the two elements.
+		//Dopóki nie natrafimy na element róweny lub większy
 		while (
 			array[currentIndex - 1] !== undefined &&
 			array[currentIndex] < array[currentIndex - 1]
 		) {
-			// Swap the elements.
+			// Zamieniamy miejscami elementy
 			[array[currentIndex - 1], array[currentIndex]] = [
 				array[currentIndex],
 				array[currentIndex - 1]
 			];
 
-			// Shift current index left.
+			// Przesuwamy indeks w lewo
 			currentIndex -= 1;
 		}
 	}
