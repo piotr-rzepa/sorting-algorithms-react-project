@@ -31,6 +31,18 @@
 	background-color: white;
 	border-radius: 10px;
 }
+
+.current {
+	pointer-events: none;
+	background-color: white;
+	border-radius: 10px;
+	fill: #713bdb;
+}
+
+.disabled {
+	pointer-events: none;
+}
+
 .wrapper .verticalNav ul li:hover a .svg-image {
 	fill: #713bdb;
 }

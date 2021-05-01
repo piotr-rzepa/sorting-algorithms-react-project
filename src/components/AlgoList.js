@@ -24,7 +24,11 @@ export default function AlgoList() {
 		<div className="algorithm-list">
 			<div className="algorithm-list-title">
 				<p>Algorithms by sorting time</p>
-				<select name="sorting" onChange={(e) => onSortChange(e.target.value)}>
+				<select
+					className="select"
+					name="sorting"
+					onChange={(e) => onSortChange(e.target.value)}
+				>
 					<option>Descending</option>
 					<option>Ascending</option>
 				</select>

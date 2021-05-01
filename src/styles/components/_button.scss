@@ -11,6 +11,7 @@
 	background-color: #f8f8fb;
 	border: 1px solid lightgray;
 	color: $purple;
+	cursor: pointer;
 }
 
 .button-group {
@@ -28,4 +29,9 @@
 	background-color: #f8f8fb;
 	border: 1px solid lightgray;
 	color: $purple;
+}
+
+.button--disabled {
+	pointer-events: none;
+	opacity: 0.5;
 }
