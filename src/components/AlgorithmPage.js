@@ -30,6 +30,10 @@ import { selectSortedPositions } from '../selectors/sortingSelector';
 export default function AlgorithmPage({ match }) {
 	//* State naszego workera
 	const [instance, setInstance] = useState(undefined);
+	const [canRun, setCanRun] = useState({
+		computation: true,
+		visualization: true
+	});
 
 	//* Tylko przy montowaniu komponentu tworzymy workera, przy unmount usuwamy go
 	useEffect(() => {
@@ -38,9 +42,7 @@ export default function AlgorithmPage({ match }) {
 	}, []);
 
 	//* Tworzenie losowych danych do wizualizacji
-	const test = Array.from({ length: 150 }, () =>
-		Math.floor(Math.random() * 100)
-	);
+	let test = Array.from({ length: 150 }, () => Math.floor(Math.random() * 100));
 
 	//* Obiekt algorytmu, na którego stronie jesteśmy
 	const sortObj = useSelector((state) => state.algorithms).filter(
@@ -73,6 +75,7 @@ export default function AlgorithmPage({ match }) {
 
 	//* Metoda odpowiedzialna za wizualizacje sortowania
 	const visualizationStep = () => {
+		setCanRun({ ...canRun, visualization: false });
 		const arr = [];
 
 		//* Pobieramy stan sortowanej tablicy po każdej iteracji algorytmu sortującego
@@ -89,12 +92,17 @@ export default function AlgorithmPage({ match }) {
 					sortingPercent: (i + 1) / arr.length,
 					data: ele.map((value) => ({ pv: value }))
 				});
+				//* Po skończeniu wizualizacji odblokowujemy przycisk
+				if (i === arr.length - 1) {
+					setCanRun({ ...canRun, visualization: true });
+				}
 			}, 300 * i);
 		});
 	};
 
 	//* Metoda odpowiedzialna za przeprowadzenie testów sortowania
 	const runTestRoutine = async () => {
+		setCanRun({ ...canRun, computation: false });
 		let passed = 0;
 		const lineData = [];
 
@@ -108,6 +116,10 @@ export default function AlgorithmPage({ match }) {
 					passed: ++passed,
 					time: ele.average
 				});
+				//* Po skończeniu wizualizacji odblokowujemy przycisk
+				if (i === arr.length - 1) {
+					setCanRun({ ...canRun, computation: true });
+				}
 			}, 200 * i);
 			lineData.push({ ...ele });
 		});
@@ -142,7 +154,9 @@ export default function AlgorithmPage({ match }) {
 						Manage data options
 					</button>
 					<button
-						className="data-options-button"
+						className={`data-options-button ${
+							!canRun.computation ? 'button--disabled' : ''
+						}`}
 						type="button"
 						onClick={() => runTestRoutine()}
 					>
@@ -150,7 +164,9 @@ export default function AlgorithmPage({ match }) {
 						Run tests
 					</button>
 					<button
-						className="data-options-button"
+						className={`data-options-button ${
+							!canRun.visualization ? 'button--disabled' : ''
+						}`}
 						type="button"
 						onClick={() => visualizationStep()}
 					>
