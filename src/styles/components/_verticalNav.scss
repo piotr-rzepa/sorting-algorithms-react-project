@@ -1,6 +1,5 @@
 .wrapper {
 	display: flex;
-	position: relative;
 }
 
 .wrapper .verticalNav {
@@ -41,6 +40,7 @@
 
 .disabled {
 	pointer-events: none;
+	visibility: hidden;
 }
 
 .wrapper .verticalNav ul li:hover a .svg-image {
@@ -50,4 +50,36 @@
 .wrapper .verticalNav ul > :last-child {
 	position: absolute;
 	bottom: 0;
+}
+
+.wrapper .verticalNav ul li button {
+	width: 100%;
+	border: none;
+	padding: $padding;
+	border-top: #373b53;
+	background-color: inherit;
+	cursor: pointer;
+}
+.wrapper .verticalNav ul li button:hover {
+	background-color: white;
+	border-radius: $padding;
+	fill: #713bdb;
+}
+
+@media only screen and (max-width: 500px) {
+	.wrapper .verticalNav {
+		visibility: hidden;
+	}
+	.wrapper .verticalNav ul > :last-child {
+		visibility: visible;
+		position: fixed;
+		align-items: center;
+	}
+	.wrapper .verticalNav ul > :last-child hr {
+		visibility: hidden;
+	}
+	.wrapper .verticalNav ul > :last-child button {
+		width: 20%;
+		display: flex;
+	}
 }

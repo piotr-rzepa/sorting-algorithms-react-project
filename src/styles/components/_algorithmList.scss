@@ -1,5 +1,4 @@
 .algorithm-list {
-	background-color: $white;
 	padding: $padding;
 	display: flex;
 	flex-direction: column;
@@ -22,6 +21,7 @@
 .algorithm-list ul li {
 	margin: $padding 0;
 	text-decoration: none;
+	font-size: larger;
 }
 
 .select {
@@ -29,4 +29,10 @@
 	color: lightgray;
 	font-size: medium;
 	text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+	.algorithm-list {
+		width: 100%;
+	}
 }

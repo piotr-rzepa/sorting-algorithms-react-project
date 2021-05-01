@@ -9,9 +9,25 @@
 }
 
 .card-chart--big {
-	width: 49%;
+	min-width: 49%;
 }
 
 .card-chart-small {
-	width: 23%;
+	min-width: 23%;
+}
+
+.chart-visualize {
+	width: 890px;
+	height: 404px;
+}
+
+@media only screen and (max-width: 500px) {
+	.card-chart,
+	.card-chart-small {
+		max-width: 100%;
+	}
+	.chart-visualize {
+		width: 400px;
+		height: 400px;
+	}
 }

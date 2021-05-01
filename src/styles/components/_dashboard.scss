@@ -1,9 +1,7 @@
 .Dashboard {
 	display: flex;
 	flex-direction: column;
-	height: 100%;
 	margin-left: 100px;
-	background-color: #f8f8fb;
 	padding: $padding 6rem;
 }
 
@@ -25,4 +23,25 @@
 
 .overview-title p {
 	color: gray;
+}
+
+@media only screen and (max-width: 500px) {
+	.Dashboard {
+		display: inline-block;
+		margin: 0 0;
+		max-width: 100%;
+		padding: 1rem;
+		font-size: 3vw;
+	}
+	.small-cards {
+		flex-flow: column;
+		flex-wrap: wrap;
+	}
+	.charts {
+		flex-direction: column;
+		max-width: 100%;
+	}
+	.charts > * {
+		margin: 1rem 0;
+	}
 }

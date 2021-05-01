@@ -4,10 +4,12 @@
 	align-items: center;
 	padding: 4rem;
 	margin: 1rem 0;
-	width: 23%;
-	background-color: $white;
+	min-width: 23%;
 	border-radius: 12px;
-	box-shadow: 2px 2px 2px lightgray;
+}
+
+.algorithms > * {
+	padding: 1em;
 }
 
 .Card-description {
@@ -19,11 +21,17 @@
 }
 
 .Card--big {
-	width: 830px;
+	max-width: 830px;
 	box-shadow: 2px 2px 2px lightgray;
 }
 
 .Card-description .subtitle {
-	color: lightgray;
 	font-size: small;
+}
+
+@media only screen and (max-width: 500px) {
+	.Card {
+		padding: 1rem;
+		width: 100%;
+	}
 }
