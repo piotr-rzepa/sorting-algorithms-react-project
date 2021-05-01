@@ -4,23 +4,29 @@
  */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ReactComponent as DashboardSVG } from '../images/Dashboard.svg';
 import { ReactComponent as SelectedAlgorithmSVG } from '../images/SortingAlgorithm.svg';
 import { ReactComponent as SettingsSVG } from '../images/settings.svg';
 
 function VerticalNav() {
+	const location = useLocation();
 	return (
 		<div className="wrapper">
 			<div className="verticalNav">
 				<ul>
 					<li>
-						<Link to="/">
+						<Link to="/" className={location.pathname === '/' ? 'current' : ''}>
 							<DashboardSVG width="24px" height="24px" className="svg-image" />
 						</Link>
 					</li>
 					<li>
-						<Link to="/algorithm/">
+						<Link
+							to="#"
+							className={
+								location.pathname.includes('/algorithm/') ? 'current' : 'disabled'
+							}
+						>
 							<SelectedAlgorithmSVG width="24px" height="24px" className="svg-image" />
 						</Link>
 					</li>
@@ -32,6 +38,7 @@ function VerticalNav() {
 					</li>
 				</ul>
 			</div>
+			{console.log(location.pathname)}
 		</div>
 	);
 }
