@@ -2,7 +2,7 @@
  * Komponent bezklasowy będący stroną główną aplikacji
  */
 
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Card from './Card';
 import ChartBar from './ChartBar';
 import ChartPie from './ChartPie';
@@ -16,8 +16,15 @@ import TrophySVG from '../images/trophy.svg';
 import { useSelector } from 'react-redux';
 import selectFastestSlowestAlgo from '../selectors/fastslowestSelector';
 import numeral from 'numeral';
+import { ThemeContext } from './ThemeContext';
+import { styleMain } from '../styles/styles';
 
 export default function Dashboard() {
+	// Pobieranie motywu [jasny/ciemny]
+	const darkTheme = useContext(ThemeContext);
+
+	//Ustawianie motywu w zależności od kontekstu
+	const currentStyle = darkTheme ? styleMain.darkStyle : styleMain.lightStyle;
 	const numberOfAlgorithms = useSelector((state) => state.algorithms.length);
 	const [fastest, slowest, average] = useSelector((state) =>
 		selectFastestSlowestAlgo(state)
@@ -25,7 +32,7 @@ export default function Dashboard() {
 	const [modalIsOpen, setIsOpen] = useState(false);
 
 	return (
-		<div className="Dashboard">
+		<div className="Dashboard" style={currentStyle}>
 			<SettingsModal
 				isOpen={modalIsOpen}
 				onRequestClose={() => setIsOpen(false)}
@@ -72,9 +79,9 @@ export default function Dashboard() {
 				/>
 			</div>
 			<div className="charts">
-				<ChartBar width={820} height={520} />
+				<ChartBar width={820} height={609} />
 				<AlgoList />
-				<ChartPie width={387} height={550} />
+				<ChartPie width={387} height={609} />
 			</div>
 			<p style={{ textAlign: 'right', padding: '2px 0' }}>
 				Made by Chili Labs & Piotr

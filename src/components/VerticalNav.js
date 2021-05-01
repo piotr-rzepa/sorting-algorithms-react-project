@@ -3,14 +3,18 @@
  * Pozwala przejść z menu głównego na stronę ...
  */
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ReactComponent as DashboardSVG } from '../images/Dashboard.svg';
 import { ReactComponent as SelectedAlgorithmSVG } from '../images/SortingAlgorithm.svg';
 import { ReactComponent as SettingsSVG } from '../images/settings.svg';
+import { ThemeContextUpdate } from './ThemeContext';
 
 function VerticalNav() {
 	const location = useLocation();
+
+	//Pobieranie motywu [jasny/ciemny]
+	const updateValue = useContext(ThemeContextUpdate);
 	return (
 		<div className="wrapper">
 			<div className="verticalNav">
@@ -32,13 +36,12 @@ function VerticalNav() {
 					</li>
 					<li>
 						<hr />
-						<a href="#" className="settings">
+						<button type="button" className="settings" onClick={updateValue}>
 							<SettingsSVG height="24px" width="24px" className="svg-image" />
-						</a>
+						</button>
 					</li>
 				</ul>
 			</div>
-			{console.log(location.pathname)}
 		</div>
 	);
 }

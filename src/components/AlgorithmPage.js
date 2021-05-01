@@ -4,7 +4,7 @@
 
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useSelector } from 'react-redux';
 import Card from './Card';
 import CardBig from './CardBig';
@@ -25,9 +25,15 @@ import { setSortingTime } from '../actions/sorting';
 import numeral from 'numeral';
 import worker from 'workerize-loader?inline!../workers/worker';
 import { selectSortedPositions } from '../selectors/sortingSelector';
-
+import { ThemeContext } from './ThemeContext';
+import { styleMain } from '../styles/styles';
 //* Obiekt match zawiera informację o ścieżce, parametrach, (w tym nazwę algorytmu który chcemy wyświetlić)
 export default function AlgorithmPage({ match }) {
+	// Pobieranie motywu [jasny/ciemny]
+	const darkTheme = useContext(ThemeContext);
+
+	//Ustawianie motywu w zależności od kontekstu
+	const currentStyle = darkTheme ? styleMain.darkStyle : styleMain.lightStyle;
 	//* State naszego workera
 	const [instance, setInstance] = useState(undefined);
 	const [canRun, setCanRun] = useState({
@@ -133,7 +139,7 @@ export default function AlgorithmPage({ match }) {
 	};
 
 	return (
-		<div className="Dashboard">
+		<div className="Dashboard" style={currentStyle}>
 			<SettingsModal
 				isOpen={modalIsOpen}
 				onRequestClose={() => setIsOpen(false)}
@@ -175,7 +181,7 @@ export default function AlgorithmPage({ match }) {
 					</button>
 				</div>
 			</div>
-			<div className="small-cards">
+			<div className="small-cards algorithms">
 				<Card
 					title={`#${place + 1}`}
 					subtitle={'Position in ranking'}
@@ -195,8 +201,8 @@ export default function AlgorithmPage({ match }) {
 				/>
 			</div>
 			<div className="charts">
-				<ChartLine width={970} height={380} data={lineChartData} />
-				<ChartVisualize width={890} height={400} data={data.data} />
+				<ChartLine width={820} height={380} data={lineChartData} />
+				<ChartVisualize width={890} height={404} data={data.data} />
 			</div>
 			<div className="small-cards">
 				<Card
@@ -224,9 +230,7 @@ export default function AlgorithmPage({ match }) {
 					background={{ backgroundColor: 'rgba(76,184,255,0.07)' }}
 				/>
 			</div>
-			<p style={{ textAlign: 'right', padding: '2px 0' }}>
-				Made by Chili Labs & Piotr
-			</p>
+			<p style={{ textAlign: 'right' }}>Made by Chili Labs & Piotr</p>
 		</div>
 	);
 }
