@@ -1,5 +1,5 @@
 //* REDUCER -> HOW ACTIONS TRANSFORM STATE INTO NEXT STATE
-const filtersReducerDefault = { searchText: '', sort: 'desc' };
+export const filtersReducerDefault = { searchText: '', sort: 'desc' };
 const filtersReducer = (state = filtersReducerDefault, action) => {
 	switch (action.type) {
 	case 'SET_TEXT_FILTER':

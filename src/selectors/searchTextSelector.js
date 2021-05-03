@@ -2,8 +2,8 @@ import { createSelector } from 'reselect';
 
 //? Seleketor wybierania algorytmów w listy po wpisaniu tekstu -> WAŻNE SHALLOW COPY [... ]
 
-const getSearchText = (state) => state.filters.searchText;
-const getAlgorithms = (state) => state.algorithms;
+export const getSearchText = (state) => state.filters.searchText;
+export const getAlgorithms = (state) => state.algorithms;
 
 const selectSearchText = createSelector(
 	[getSearchText, getAlgorithms],

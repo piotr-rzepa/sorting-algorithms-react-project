@@ -2,7 +2,7 @@ import { createSelector } from 'reselect';
 
 //? Seleketor do zwracania najszybszego i najwolniejszego algorytmu pod względem sortowania-> WAŻNE SHALLOW COPY [... ]
 
-const getAlgorithms = (state) => state.algorithms;
+export const getAlgorithms = (state) => state.algorithms;
 
 const selectFastestSlowestAlgo = createSelector(getAlgorithms, (algorithms) => {
 	const timesArray = [...algorithms].sort((a, b) =>

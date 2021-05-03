@@ -31,7 +31,7 @@ const sortManager = (sortType, options) => {
 	}
 };
 
-function* testCaseGenerator(options, sortAsc, sortDesc) {
+export function* testCaseGenerator(options, sortAsc, sortDesc) {
 	const results = [];
 	const sizeIncreaseStep = options.arrayEndSize / options.arrayStartSize;
 	const sort = options.sortingOrder === 'asc' ? sortAsc : sortDesc;
@@ -79,7 +79,7 @@ export const evaluateResults = (arr) => {
 	];
 };
 
-const dataGenerator = ({ dataOrder, sortingOrder }, length) => {
+export const dataGenerator = ({ dataOrder, sortingOrder }, length) => {
 	switch (dataOrder) {
 	case 'random':
 		return Array.from({ length }, () => Math.floor(Math.random() * 1000));

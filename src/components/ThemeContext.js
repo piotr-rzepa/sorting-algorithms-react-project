@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React, { useState, useContext, createContext } from 'react';
+import React, { useState, createContext } from 'react';
 
 //Tworzymy kontekst do przekazywania informacji o trybie jasnym/ciemnym
 export const ThemeContext = createContext();
@@ -11,7 +11,7 @@ export const ThemeContextUpdate = createContext();
 export const ThemeProvider = ({ children }) => {
 	const [darkTheme, setDarkTheme] = useState(false);
 
-	//Metoda do zmieany stylu
+	//Metoda do zmiany stylu
 	const updateContext = () => setDarkTheme((prevTheme) => !prevTheme);
 
 	return (

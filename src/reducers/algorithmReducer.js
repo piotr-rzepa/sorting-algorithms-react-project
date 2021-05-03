@@ -4,7 +4,7 @@ import { insertionSortGen } from '../sortingImpl/insertionsort';
 import { selectionSortGen } from '../sortingImpl/selectionsort';
 import { shellSortGen } from '../sortingImpl/shellsort';
 
-const defaultReducerState = [
+export const defaultReducerState = [
 	{
 		id: 0,
 		name: 'Bubble Sort',

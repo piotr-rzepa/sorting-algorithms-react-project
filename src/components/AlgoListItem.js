@@ -20,7 +20,7 @@ export default function AlgoListItem(props) {
 				<Link to={`/algorithm/${props.name}`} style={currentStyle}>
 					{props.name}
 				</Link>
-				:{props.sortingTime.average}{' '}
+				:{props.sortingTime.average}
 			</li>
 		</React.Fragment>
 	);

@@ -1,5 +1,5 @@
 //* REDUCER -> HOW ACTIONS TRANSFORM STATE INTO NEXT STATE
-const testsReducerDefault = {
+export const testsReducerDefault = {
 	datasetSize: 100,
 	arrayStartSize: 100,
 	dataOrder: 'random',

@@ -51,7 +51,7 @@ const quickSortDesc = (originalArr) => {
 	return [...leftArraySorted, ...center, ...rightArraySorted];
 };
 
-function swap(items, firstIndex, secondIndex) {
+export function swap(items, firstIndex, secondIndex) {
 	var temp = items[firstIndex];
 	items[firstIndex] = items[secondIndex];
 	items[secondIndex] = temp;

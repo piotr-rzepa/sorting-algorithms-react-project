@@ -17,7 +17,7 @@ const bubbleSortAsc = ([...arr]) => {
 	return arr;
 };
 
-const bubbleSortDesc = async ([...arr]) => {
+const bubbleSortDesc = ([...arr]) => {
 	let swap;
 	let n = arr.length - 1;
 	do {

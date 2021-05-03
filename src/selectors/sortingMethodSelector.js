@@ -2,7 +2,7 @@ import { createSelector } from 'reselect';
 
 //? Seleketor do zwracania spreparowanych danych gotowych do użycia w Pie chart -> Metody sortowania
 
-const getAlgorithms = (state) => state.algorithms;
+export const getAlgorithms = (state) => state.algorithms;
 
 const selectMethodsOfSorting = createSelector(getAlgorithms, (algorithms) => {
 	const set = new Set();
