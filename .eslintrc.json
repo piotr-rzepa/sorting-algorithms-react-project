@@ -18,5 +18,13 @@
 		"linebreak-style": ["error", "windows"],
 		"quotes": ["error", "single"],
 		"semi": ["error", "always"]
-	}
+	},
+	"overrides": [
+		{
+			"files": ["**/*.spec.js", "**/*.spec.jsx", "**/*.test.js", "**/*.test.jsx"],
+			"env": {
+				"jest": true
+			}
+		}
+	]
 }
