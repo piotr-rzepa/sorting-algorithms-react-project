@@ -17,7 +17,7 @@ import { useSelector } from 'react-redux';
 import selectFastestSlowestAlgo from '../selectors/fastslowestSelector';
 import numeral from 'numeral';
 import { ThemeContext } from './ThemeContext';
-import { styleMain } from '../styles/styles';
+import { styleMain, styleButtons } from '../styles/styles';
 
 export default function Dashboard() {
 	// Pobieranie motywu [jasny/ciemny]
@@ -47,6 +47,7 @@ export default function Dashboard() {
 					className="data-options-button"
 					type="button"
 					onClick={() => setIsOpen(() => true)}
+					style={darkTheme ? styleButtons.darkStyle : styleButtons.lightStyle}
 				>
 					<EditSVG width="24px" height="24px" />
 					Manage data options

@@ -3,7 +3,7 @@
  */
 
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -13,6 +13,8 @@ import {
 	setSortingOrder,
 	setArrayGain
 } from '../actions/tests';
+import { ThemeContext } from './ThemeContext';
+import { styleModal, styleButtons, styleSearchBar } from '../styles/styles';
 
 export default function SettingsModal({
 	isOpen,
@@ -27,6 +29,10 @@ export default function SettingsModal({
 		arrayEndSize
 	} = useSelector((state) => state.tests);
 	const dispatch = useDispatch();
+	const darkTheme = useContext(ThemeContext);
+	const [currentModalStyle, currentButtonStyle, currentInputStyle] = darkTheme
+		? [styleModal.darkStyle, styleButtons.darkStyle, styleSearchBar.darkStyle]
+		: [styleModal.lightStyle, styleButtons.lightStyle, styleSearchBar.lightStyle];
 	return (
 		<Modal
 			isOpen={isOpen}
@@ -34,6 +40,7 @@ export default function SettingsModal({
 			contentLabel={contentLabel}
 			closeTimeoutMS={200}
 			className="modal"
+			style={{ overlay: { background: currentModalStyle.backgroundColor } }}
 		>
 			<h2>Algorithm dataset settings</h2>
 			<div className="numeric-settings">
@@ -56,6 +63,7 @@ export default function SettingsModal({
 						step="10"
 						value={datasetSize}
 						onChange={(e) => dispatch(setSizeDataset(parseInt(e.target.value, 10)))}
+						style={currentInputStyle}
 						required
 					></input>
 					<input
@@ -65,6 +73,7 @@ export default function SettingsModal({
 						step="10"
 						value={arrayStartSize}
 						onChange={(e) => dispatch(setSizeArray(parseInt(e.target.value, 10)))}
+						style={currentInputStyle}
 						required
 					></input>
 
@@ -75,6 +84,7 @@ export default function SettingsModal({
 						step="10"
 						value={arrayEndSize}
 						onChange={(e) => dispatch(setArrayGain(parseInt(e.target.value, 10)))}
+						style={currentInputStyle}
 						required
 					></input>
 				</div>
@@ -144,6 +154,7 @@ export default function SettingsModal({
 				className="data-options-button--modal"
 				type="button"
 				onClick={() => onRequestClose()}
+				style={currentButtonStyle}
 			>
 				Save and close
 			</button>

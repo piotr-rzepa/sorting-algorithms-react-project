@@ -58,3 +58,21 @@ export const styleSearchBar = {
 		color: styleFont.lightStyle.color
 	}
 };
+
+export const styleButtons = {
+	darkStyle: {
+		backgroundColor: '#949496'
+	},
+	lightStyle: {
+		backgroundColor: '#f8f8fb'
+	}
+};
+
+export const styleModal = {
+	darkStyle: {
+		backgroundColor: '#949496'
+	},
+	lightStyle: {
+		backgroundColor: '#f8f8fb'
+	}
+};

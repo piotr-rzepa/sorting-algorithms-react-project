@@ -26,14 +26,16 @@ import numeral from 'numeral';
 import worker from 'workerize-loader?inline!../workers/worker';
 import { selectSortedPositions } from '../selectors/sortingSelector';
 import { ThemeContext } from './ThemeContext';
-import { styleMain } from '../styles/styles';
+import { styleMain, styleButtons } from '../styles/styles';
 //* Obiekt match zawiera informację o ścieżce, parametrach, (w tym nazwę algorytmu który chcemy wyświetlić)
 export default function AlgorithmPage({ match }) {
 	// Pobieranie motywu [jasny/ciemny]
 	const darkTheme = useContext(ThemeContext);
 
 	//Ustawianie motywu w zależności od kontekstu
-	const currentStyle = darkTheme ? styleMain.darkStyle : styleMain.lightStyle;
+	const [currentStyle, buttonStyle] = darkTheme
+		? [styleMain.darkStyle, styleButtons.darkStyle]
+		: [styleMain.lightStyle, styleButtons.lightStyle];
 	//* State naszego workera
 	const [instance, setInstance] = useState(undefined);
 	const [canRun, setCanRun] = useState({
@@ -155,6 +157,7 @@ export default function AlgorithmPage({ match }) {
 						type="button"
 						className="data-options-button"
 						onClick={() => setIsOpen(() => true)}
+						style={buttonStyle}
 					>
 						<EditSVG width="24px" height="24px" />
 						Manage data options
@@ -165,6 +168,7 @@ export default function AlgorithmPage({ match }) {
 						}`}
 						type="button"
 						onClick={() => runTestRoutine()}
+						style={buttonStyle}
 					>
 						<PlusSVG width="24px" height="24px" />
 						Run tests
@@ -175,6 +179,7 @@ export default function AlgorithmPage({ match }) {
 						}`}
 						type="button"
 						onClick={() => visualizationStep()}
+						style={buttonStyle}
 					>
 						<PlusSVG width="24px" height="24px" />
 						Show example visualization
