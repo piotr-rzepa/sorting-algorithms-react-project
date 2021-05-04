@@ -76,6 +76,7 @@ The website is also adjusted to mobile devices:<br/>
 <img src="./Readme_img/responsive4.png" height=350 alt="No photo"/>
 
 <hr/>
+
 ## <strong>Tests</strong>
 
 Testing was done using Jest and Enzyme, what was more than enough to test shallow rendering and behaviour of certain inputs, buttons, radiobuttons as well as sorting implementations and whole redux/react-redux combination (actions, reducers, selectors)<br/>
