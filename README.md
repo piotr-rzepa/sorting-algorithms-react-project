@@ -67,13 +67,13 @@ Settings modal, allowing user to adjust testing options to fit their need:<br/>
 <img src="./Readme_img/settings.png" alt="No photo"/>
 
 Small video of how te visualization process looks like:<br/>
-<img src="./Readme_img/sort-gif.gif"alt="No photo"/>
+<img src="./Readme_img/sort-gif.gif" alt="No photo"/>
 
 The website is also adjusted to mobile devices:<br/>
-<img src="./Readme_img/responsive1.png" height=400 alt="No photo"/>
-<img src="./Readme_img/responsive2.png" height=400 alt="No photo"/>
-<img src="./Readme_img/responsive3.png" height=400 alt="No photo"/>
-<img src="./Readme_img/responsive4.png" height=400 alt="No photo"/>
+<img src="./Readme_img/responsive1.png" height=350 alt="No photo"/>
+<img src="./Readme_img/responsive2.png" height=350 alt="No photo"/>
+<img src="./Readme_img/responsive3.png" height=350 alt="No photo"/>
+<img src="./Readme_img/responsive4.png" height=350 alt="No photo"/>
 
 <hr/>
 ## <strong>Tests</strong>
