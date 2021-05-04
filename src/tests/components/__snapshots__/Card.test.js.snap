@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> renders correctly 1`] = `
+<div
+  className="Card"
+  style={
+    Object {
+      "backgroundColor": "white",
+      "boxShadow": "2px 2px 2px lightgray",
+      "color": "black",
+    }
+  }
+>
+  <div
+    className="svg-image-background"
+  >
+    <img
+      alt="Icon"
+      height={38}
+      width={38}
+    />
+  </div>
+  <div
+    className="Card-description"
+  >
+    <h2 />
+    <p
+      className="subtitle"
+    />
+  </div>
+</div>
+`;

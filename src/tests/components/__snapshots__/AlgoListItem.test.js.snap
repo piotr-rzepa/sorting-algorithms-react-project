@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AlgorithmListItem /> renders correctly 1`] = `
+<Fragment>
+  <li>
+    <Link
+      style={
+        Object {
+          "color": "black",
+        }
+      }
+      to="/algorithm/Bubble Sort"
+    >
+      Bubble Sort
+    </Link>
+    :
+    10
+  </li>
+</Fragment>
+`;

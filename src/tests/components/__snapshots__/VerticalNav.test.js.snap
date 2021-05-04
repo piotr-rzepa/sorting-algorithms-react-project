@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VerticalNav /> Should render Horizontal navbar correctly 1`] = `
+<div
+  className="wrapper"
+>
+  <div
+    className="verticalNav"
+  >
+    <ul>
+      <li>
+        <Link
+          className=""
+          to="/"
+        >
+          <ForwardRef(SvgDashboard)
+            className="svg-image"
+            height="24px"
+            width="24px"
+          />
+        </Link>
+      </li>
+      <li>
+        <Link
+          className="disabled"
+          to="#"
+        >
+          <ForwardRef(SvgSortingAlgorithm)
+            className="svg-image"
+            height="24px"
+            width="24px"
+          />
+        </Link>
+      </li>
+      <li>
+        <hr />
+        <button
+          className="settings"
+          type="button"
+        >
+          <ForwardRef(SvgSettings)
+            className="svg-image"
+            height="24px"
+            width="24px"
+          />
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

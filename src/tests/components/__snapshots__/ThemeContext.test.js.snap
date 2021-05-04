@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component handles theme change Renders correctly 1`] = `
+<ContextProvider
+  value={false}
+>
+  <ContextProvider
+    value={[Function]}
+  />
+</ContextProvider>
+`;

@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HorizontalNav /> Should render Horizontal navbar correctly 1`] = `
+<div
+  className="HorizontalNav"
+  style={
+    Object {
+      "backgroundColor": "white",
+      "color": "black",
+    }
+  }
+>
+  <Link
+    className="logoContainer"
+    to="/"
+  >
+    <ForwardRef(SvgLogoP)
+      className="svg-image"
+      height="24px"
+      width="24px"
+    />
+  </Link>
+  <div
+    className="search-bar"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Search..."
+      style={
+        Object {
+          "backgroundColor": "white",
+          "color": "black",
+        }
+      }
+      type="search"
+    />
+    <div
+      className="dropdown-search "
+    >
+      <ul>
+        <a>
+          <Link
+            to="/algorithm/Bubble Sort"
+          >
+            Bubble Sort
+          </Link>
+          <hr
+            style={
+              Object {
+                "borderTop": "gray",
+              }
+            }
+          />
+        </a>
+        <a>
+          <Link
+            to="/algorithm/Quick Sort"
+          >
+            Quick Sort
+          </Link>
+          <hr
+            style={
+              Object {
+                "borderTop": "gray",
+              }
+            }
+          />
+        </a>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="creator-data"
+  >
+    <div
+      className="creator-data-wrapper"
+    >
+      <img
+        alt="Not found"
+        className="rounded-img"
+        src="ASC_2746_v1.jpg"
+      />
+      <div
+        className="creator-data-name"
+      >
+        <p>
+          Piotr Rzepkowski
+        </p>
+        <h5>
+          Creator
+        </h5>
+      </div>
+    </div>
+    <div
+      className="creator-data-socials"
+    >
+      <Link
+        target="_blank"
+        to={
+          Object {
+            "pathname": "https://github.com/piotr-rzepa",
+          }
+        }
+      >
+        <ForwardRef(SvgGithub)
+          height="24px"
+          width="24px"
+        />
+      </Link>
+      <Link
+        target="_blank"
+        to={
+          Object {
+            "pathname": "https://www.instagram.com/piotrullo_/",
+          }
+        }
+      >
+        <ForwardRef(SvgInstagram)
+          height="24px"
+          width="24px"
+        />
+      </Link>
+      <Link
+        target="_blank"
+        to={
+          Object {
+            "pathname": "https://www.facebook.com/piotr.rzepkowski.3",
+          }
+        }
+      >
+        <ForwardRef(SvgFacebook)
+          height="24px"
+          width="24px"
+        />
+      </Link>
+    </div>
+  </div>
+</div>
+`;

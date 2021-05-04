@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dashboard /> Should render component correctly 1`] = `
+<div
+  className="Dashboard"
+  style={
+    Object {
+      "backgroundColor": "#202020",
+      "color": "white",
+    }
+  }
+>
+  <SettingsModal
+    contentLabel="Example Modal"
+    isOpen={true}
+    onRequestClose={[Function]}
+  />
+  <div
+    className="overview"
+  >
+    <div
+      className="overview-title"
+    >
+      <h1>
+        Dashboard
+      </h1>
+      <p>
+        Overview of sorting algorithms
+      </p>
+    </div>
+    <button
+      className="data-options-button"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#949496",
+        }
+      }
+      type="button"
+    >
+      <ForwardRef(SvgEdit)
+        height="24px"
+        width="24px"
+      />
+      Manage data options
+    </button>
+  </div>
+  <div
+    className="small-cards"
+  >
+    <Card
+      background={
+        Object {
+          "backgroundColor": "rgba(113,59,219,0.05)",
+        }
+      }
+      icon="group.svg"
+      subtitle="Algorithms"
+      title={
+        Array [
+          0,
+          0,
+          0,
+        ]
+      }
+    />
+    <Card
+      background={
+        Object {
+          "backgroundColor": "rgba(76,184,255,0.07)",
+        }
+      }
+      icon="clock.svg"
+      subtitle="Overall average sorting time"
+      title="0:00:00ms"
+    />
+    <Card
+      background={
+        Object {
+          "backgroundColor": "rgba(255,76,97,0.05)",
+        }
+      }
+      icon="decreasing.svg"
+      subtitle="Worst average sorting time"
+      title={0}
+    />
+    <Card
+      background={
+        Object {
+          "backgroundColor": "rgba(255,184,0,0.07)",
+        }
+      }
+      icon="trophy.svg"
+      subtitle="Best average sorting time"
+      title={0}
+    />
+  </div>
+  <div
+    className="charts"
+  >
+    <ChartBar
+      height={609}
+      width={820}
+    />
+    <AlgoList />
+    <CardChart
+      height={609}
+      width={387}
+    />
+  </div>
+  <p
+    style={
+      Object {
+        "padding": "2px 0",
+        "textAlign": "right",
+      }
+    }
+  >
+    Made by Chili Labs & Piotr
+  </p>
+</div>
+`;

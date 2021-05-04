@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dashboard /> Should invoke closing modal correctly 1`] = `true`;
+
+exports[`<Dashboard /> Should render component correctly 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="modal"
+  closeTimeoutMS={200}
+  contentElement={[Function]}
+  isOpen={false}
+  overlayElement={[Function]}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  preventScroll={false}
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+  style={
+    Object {
+      "overlay": Object {
+        "background": "#949496",
+      },
+    }
+  }
+>
+  <h2>
+    Algorithm dataset settings
+  </h2>
+  <div
+    className="numeric-settings"
+  >
+    <div
+      className="settings-title"
+    >
+      <label
+        htmlFor="dataset-length"
+        name="dataset-length"
+      >
+        Number of tests per array length:
+      </label>
+      <label
+        htmlFor="starting-array-length"
+        name="starting-array-length"
+      >
+        Star array length:
+      </label>
+      <label
+        htmlFor="array-gain"
+        name="array-gain"
+      >
+        End array length:
+      </label>
+    </div>
+    <div
+      className="settings-input"
+    >
+      <input
+        max="10000"
+        min="10"
+        onChange={[Function]}
+        required={true}
+        step="10"
+        style={
+          Object {
+            "backgroundColor": "#606060",
+            "color": "white",
+          }
+        }
+        type="number"
+        value={100}
+      />
+      <input
+        max="1000"
+        min="10"
+        onChange={[Function]}
+        required={true}
+        step="10"
+        style={
+          Object {
+            "backgroundColor": "#606060",
+            "color": "white",
+          }
+        }
+        type="number"
+        value={100}
+      />
+      <input
+        max="10000"
+        min="100"
+        onChange={[Function]}
+        required={true}
+        step="10"
+        style={
+          Object {
+            "backgroundColor": "#606060",
+            "color": "white",
+          }
+        }
+        type="number"
+        value={1000}
+      />
+    </div>
+  </div>
+  <div
+    className="select-settings"
+  >
+    <p>
+      Select data order:
+    </p>
+    <div
+      className="select-settings-single"
+    >
+      <input
+        checked={false}
+        id="best"
+        name="scenario"
+        onChange={[Function]}
+        type="radio"
+        value="best"
+      />
+      <label
+        htmlFor="best"
+      >
+         Best scenario (data already sorted)
+      </label>
+    </div>
+    <div
+      className="select-settings-single"
+    >
+      <input
+        checked={false}
+        id="worst"
+        name="scenario"
+        onChange={[Function]}
+        type="radio"
+        value="worst"
+      />
+      <label
+        htmlFor="worst"
+      >
+         Worst scenario (data sorted in reverse)
+      </label>
+    </div>
+    <div
+      className="select-settings-single"
+    >
+      <input
+        checked={true}
+        id="random"
+        name="scenario"
+        onChange={[Function]}
+        type="radio"
+        value="random"
+      />
+      <label
+        htmlFor="random"
+      >
+         Random scenario (unfiorm distribution)
+      </label>
+    </div>
+  </div>
+  <div
+    className="select-settings"
+  >
+    <p>
+      Select sorting order:
+    </p>
+    <div
+      className="select-settings-single"
+    >
+      <input
+        checked={false}
+        id="asc"
+        name="sorting"
+        onChange={[Function]}
+        type="radio"
+        value="asc"
+      />
+      <label>
+        Ascending order
+      </label>
+    </div>
+    <div
+      className="select-settings-single"
+    >
+      <input
+        checked={true}
+        id="desc"
+        name="sorting"
+        onChange={[Function]}
+        type="radio"
+        value="desc"
+      />
+      <label>
+        Descending order
+      </label>
+    </div>
+  </div>
+  <button
+    className="data-options-button--modal"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#949496",
+      }
+    }
+    type="button"
+  >
+    Save and close
+  </button>
+</Modal>
+`;

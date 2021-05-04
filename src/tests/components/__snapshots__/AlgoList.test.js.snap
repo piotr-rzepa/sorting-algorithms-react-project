@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AlgorithmList /> Should render AlgorithmList correctly 1`] = `
+<div
+  className="algorithm-list"
+  style={
+    Object {
+      "backgroundColor": "white",
+      "boxShadow": "2px 2px 2px lightgray",
+      "color": "black",
+    }
+  }
+>
+  <div
+    className="algorithm-list-title"
+  >
+    <p>
+      Algorithms by sorting time
+    </p>
+    <select
+      className="select"
+      name="sorting"
+      onChange={[Function]}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "border": "none",
+          "color": "lightgray",
+        }
+      }
+    >
+      <option>
+        Descending
+      </option>
+      <option>
+        Ascending
+      </option>
+    </select>
+  </div>
+  <hr />
+  <ul>
+    <AlgoListItem
+      key="0"
+      name="Bubble Sort"
+      sortingTime={
+        Object {
+          "average": 10,
+          "best": 0,
+          "worst": 0,
+        }
+      }
+    />
+    <AlgoListItem
+      key="1"
+      name="Quick Sort"
+      sortingTime={
+        Object {
+          "average": 100,
+          "best": 0,
+          "worst": 0,
+        }
+      }
+    />
+  </ul>
+</div>
+`;
