@@ -55,25 +55,25 @@ All installed modules can be found in package.json.<hr/>
 
 Versions with light and dark themes enabled.<br/>
 On the main page user is able to compare all algorithm implementation (5) on one bar chart.
-<img src="./Readme_img/main-light-filled.png" width=1200 height=600 alt="No photo"/>
-<img src="./Readme_img/main-dark-filled.png" width=1200 height=600 alt="No photo"/>
+<img src="./Readme_img/main-light-filled.png" alt="No photo"/>
+<img src="./Readme_img/main-dark-filled.png" alt="No photo"/>
 
 Algorithm page, where user is able to track best, worst and average time of a certain sorting step with size of an array displayed on the X-axis and time on Y-axis.<br/>
 A visualization chart on the right side enables user to see algorithm in action - each step of the algorithm is labeled and visible to user.<br/>
-<img src="./Readme_img/algorithm-line-filled.png" width=1200 height=600 alt="No photo"/>
-<img src="./Readme_img/algorithm-dark-filled.png" width=1200 height=600 alt="No photo"/>
+<img src="./Readme_img/algorithm-line-filled.png" alt="No photo"/>
+<img src="./Readme_img/algorithm-dark-filled.png" alt="No photo"/>
 
 Settings modal, allowing user to adjust testing options to fit their need:<br/>
-<img src="./Readme_img/settings.png" width=1200 height=600 alt="No photo"/>
+<img src="./Readme_img/settings.png" alt="No photo"/>
 
 Small video of how te visualization process looks like:<br/>
-<img src="./Readme_img/sort-gif.gif" width=1200 height=600 alt="No photo"/>
+<img src="./Readme_img/sort-gif.gif"alt="No photo"/>
 
 The website is also adjusted to mobile devices:<br/>
-<img src="./Readme_img/responsive1.png" height=500 alt="No photo"/>
-<img src="./Readme_img/responsive2.png" height=500 alt="No photo"/>
-<img src="./Readme_img/responsive3.png" height=500 alt="No photo"/>
-<img src="./Readme_img/responsive4.png" height=500 alt="No photo"/>
+<img src="./Readme_img/responsive1.png" height=400 alt="No photo"/>
+<img src="./Readme_img/responsive2.png" height=400 alt="No photo"/>
+<img src="./Readme_img/responsive3.png" height=400 alt="No photo"/>
+<img src="./Readme_img/responsive4.png" height=400 alt="No photo"/>
 
 <hr/>
 ## <strong>Tests</strong>
@@ -82,7 +82,7 @@ Testing was done using Jest and Enzyme, what was more than enough to test shallo
 Test coverage in terminal
 <img src="./Readme_img/test-coverage1.png" alt="No photo"/>
 Test coverage in web
-<img src="./Readme_img/test-coverage2.png" width=1200 height=600 alt="No photo"/>
+<img src="./Readme_img/test-coverage2.png" alt="No photo"/>
 
 <hr/>
 
