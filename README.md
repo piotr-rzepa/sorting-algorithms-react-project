@@ -1,73 +1,112 @@
-## (Sidenote) Link to Figma with design website is supposed to have in the future:
- [figma/sorting-algorithms-project-react](https://www.figma.com/file/zYMyfdaV0nViJkQYSGDcc4/Sorting-algorithms-react-app?node-id=0%3A1)
-
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# <strong>Sorting algorithms website in React</strong>
 
-In the project directory, you can run:
+<img src="./Readme_img/main-light-filled.png" alt="No photo"/><hr/>
+Simple two page client-side rendering application, which allows users to measure times of various sorting algorithms, with possibility to adjust settings like size of an array, number of test cases for particular iteration, distribution of data in arrays and direction of sorting.
+Apart from that, user is able to view sorting process on small fixed dataset.
 
-### `npm start`
+## <strong>Table of contents</strong>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [General info](#general-info)
+- [Design](#design)
+- [Technologies](#technologies)
+- [Images](#images)
+- [Tests](#tests)
+- [Setup](#setup)
+<hr/>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## <strong>General info</strong>
 
-### `npm test`
+Page is rendered on the client side using React-Router and uses web/service worker to move large and time consuming computations to another thread, what makes website interactive during sorting large size arrays multiple times per dataset. Visualization is done by converting algorithm implementation to generator function, which yields state of an array after each iteration of the algorithm. The data is then displayed using bar chart. Class components are nowhere to be found - all components are written as function components and all of them make use of hooks API. Redux stores three big chunks of information: 1. References to all algorithms with their description, name, etc. as an array, 2. tests object consisting of all options to test algorithms defined by user (length of an array, min and max sizes, data distribution and so on), 3. object with helps with searching and sorting algorithms, which stores for example user input in search bar or order of the displayed algorithms in the main page.<hr/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## <strong>Design</strong>
 
-### `npm run build`
+The main concept for the application's look was created in Figma, alongside with concept main page and algorithm page. Note that dark theme was not taken into consideration until lasts production steps.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FzYMyfdaV0nViJkQYSGDcc4%2FSorting-algorithms-react-app%3Fnode-id%3D8939%253A63" allowfullscreen></iframe><hr/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## <strong>Technologies</strong>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Main core of the project is created with:
 
-### `npm run eject`
+- React version: 17.0.2
+- React-dom version: 17.0.2
+- Redux version: 4.0.5
+- React-redux version: 7.2.3
+- React router dom: 5.2.0
+- Sass version: 1.32.10
+- Recharts version: 2.0.9
+- Enzyme version: 3.11.0
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Additional npm libraries:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Moment version: 2.29.1
+- Numeral version: 2.0.6
+- Reselect version: 4.0.0
+- Flow version: 0.148.0
+- Workerize-loader version: 1.3.0
+- Enzyme-toJSON version: 3.6.2
+- @wojtekmaj/enzyme-adapter-react-17 version: 0.6.1
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+All installed modules can be found in package.json.<hr/>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## <strong>Images</strong>
 
-## Learn More
+Versions with light and dark themes enabled.<br/>
+On the main page user is able to compare all algorithm implementation (5) on one bar chart.
+<img src="./Readme_img/main-light-filled.png" width=1200 height=600 alt="No photo"/>
+<img src="./Readme_img/main-dark-filled.png" width=1200 height=600 alt="No photo"/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Algorithm page, where user is able to track best, worst and average time of a certain sorting step with size of an array displayed on the X-axis and time on Y-axis.<br/>
+A visualization chart on the right side enables user to see algorithm in action - each step of the algorithm is labeled and visible to user.<br/>
+<img src="./Readme_img/algorithm-line-filled.png" width=1200 height=600 alt="No photo"/>
+<img src="./Readme_img/algorithm-dark-filled.png" width=1200 height=600 alt="No photo"/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Settings modal, allowing user to adjust testing options to fit their need:<br/>
+<img src="./Readme_img/settings.png" width=1200 height=600 alt="No photo"/>
 
-### Code Splitting
+Small video of how te visualization process looks like:<br/>
+<img src="./Readme_img/sort-gif.gif" width=1200 height=600 alt="No photo"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The website is also adjusted to mobile devices:<br/>
+<img src="./Readme_img/responsive1.png" height=500 alt="No photo"/>
+<img src="./Readme_img/responsive2.png" height=500 alt="No photo"/>
+<img src="./Readme_img/responsive3.png" height=500 alt="No photo"/>
+<img src="./Readme_img/responsive4.png" height=500 alt="No photo"/>
 
-### Analyzing the Bundle Size
+<hr/>
+## <strong>Tests</strong>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Testing was done using Jest and Enzyme, what was more than enough to test shallow rendering and behaviour of certain inputs, buttons, radiobuttons as well as sorting implementations and whole redux/react-redux combination (actions, reducers, selectors)<br/>
+Test coverage in terminal
+<img src="./Readme_img/test-coverage1.png" alt="No photo"/>
+Test coverage in web
+<img src="./Readme_img/test-coverage2.png" width=1200 height=600 alt="No photo"/>
 
-### Making a Progressive Web App
+<hr/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## <strong>Setup</strong>
 
-### Advanced Configuration
+To run this project, clone it and run it using scripts defined in package.json:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+$ git clone https://github.com/piotr-rzepa/sorting-algorithms-react-project.git
+$ npm init
+```
 
-### Deployment
+From now on, you have two options, either run it using script (run keyword can be omitted):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+$ npm run start
+```
 
-### `npm run build` fails to minify
+It will start development version of the application on localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Or creating production version of the application, ready for deployment
+
+```
+$ npm run build
+```
+
+The application didn't mean to be deployed for Heroku (in comparision to my other applications) so it's necessary to create run script in order to enable Heroku to run the appication, as well as perhaps eject the project to get access to things like webpack and its configuration, which at its current state is abstracted away by create react app.
